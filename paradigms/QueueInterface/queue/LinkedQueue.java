@@ -14,7 +14,12 @@ public class LinkedQueue extends AbstractQueue{
         }
     }
 
-    LinkedQueue() {
+    @Override
+    protected Queue initQueue() {
+        return new LinkedQueue();
+    }
+
+     public LinkedQueue() {
         super();
         head = new Node();
         head.next = head;

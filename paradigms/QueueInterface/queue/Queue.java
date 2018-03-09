@@ -1,4 +1,8 @@
 package queue;
+
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 //Model elements(front <== back), next(pointer), previous(pointer), size
 //Inv = {size >= 0 && elements(i) != null for i = front .. back)
 public interface Queue {
@@ -40,4 +44,8 @@ public interface Queue {
     //Pre: size > 0
     //Post: R = elements(back') && front == front' && back == previous(back') && size == size' - 1 && immutable(front, back)
     Object remove();
+
+    Queue filter(Predicate<Object> predicate);
+
+    Queue map(Function<Object, Object> function);
 }

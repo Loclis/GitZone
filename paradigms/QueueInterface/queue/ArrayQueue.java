@@ -4,7 +4,7 @@ public class ArrayQueue extends AbstractQueue{
     private int head, tail;
     private Object[] elements;
 
-    ArrayQueue() {
+    public ArrayQueue() {
         super();
         head = tail = 0;
         elements = new Object[2];
@@ -15,6 +15,11 @@ public class ArrayQueue extends AbstractQueue{
         head = tail = 0;
         elements = new Object[2];
         ensureCapacity(capacity);
+    }
+
+    @Override
+    protected Queue initQueue() {
+        return new ArrayQueue();
     }
 
     private void ensureCapacity(int capacity) {

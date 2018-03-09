@@ -1,21 +1,24 @@
 package queue;
 
-public abstract class AbstractQueue implements Queue{
-    protected int size;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
-    protected void checkForNull(Object value) {
+public abstract class AbstractQueue implements Queue {
+    int size;
+
+    private void checkForNull(Object value) {
         if (value == null) {
             throw new AssertionError("Null element found.");
         }
     }
 
-    protected void tryForGet() {
+    private void tryForGet() {
         if (isEmpty()) {
             throw new AssertionError("No elements found.");
         }
     }
 
-    AbstractQueue(){
+    AbstractQueue() {
         size = 0;
     }
 
@@ -77,11 +80,45 @@ public abstract class AbstractQueue implements Queue{
         return returnValue;
     }
 
+    @Override
+    public Queue filter(Predicate<Object> predicate) {
+        Queue returnQueue = initQueue();
+        int length = size();
+        for (int i = 0; i < length; i++) {
+            Object currentElement = dequeue();
+            if (predicate.test(currentElement)) {
+                returnQueue.enqueue(currentElement);
+            }
+            enqueue(currentElement);
+        }
+        return returnQueue;
+    }
+
+    @Override
+    public Queue map(Function<Object, Object> function) {
+        Queue returnQueue = initQueue();
+        int length = size();
+        for (int i = 0; i < length; i++) {
+            Object currentElement = dequeue();
+            returnQueue.enqueue(function.apply(currentElement));
+            enqueue(currentElement);
+        }
+        return returnQueue;
+    }
+
     protected abstract void pushFront(Object value);
+
     protected abstract Object getFront();
+
     protected abstract void popFront();
+
     protected abstract void pushBack(Object value);
+
     protected abstract Object getBack();
+
     protected abstract void popBack();
+
     protected abstract void doCleaning();
+
+    protected abstract Queue initQueue();
 }
