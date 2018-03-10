@@ -25,7 +25,9 @@ _start:
 
                 jmp             exit
 
-
+;rdi - result adress
+;rsi - source adress
+;rcx - length of arguments
 copy_long:
                 push            rdi
                 push            rsi
@@ -45,7 +47,11 @@ copy_long:
                 pop             rsi
                 ret
 
-
+;rdi - result adress(2*rcx long number)
+;rax - first long argument
+;rbx - second long atgument
+;rcx - length of long arguments
+;rdx - length of long arguments
 mul_long_long:
                 push            rdi
                 push            rax
