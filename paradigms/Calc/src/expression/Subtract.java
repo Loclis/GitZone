@@ -1,4 +1,4 @@
-package calc;
+package expression;
 
 public class Subtract extends AbstractOperation{
     Subtract(Expression leftArgument, Expression rightArgument) {
@@ -6,7 +6,7 @@ public class Subtract extends AbstractOperation{
     }
 
     @Override
-    double calc(double value) {
+    int calc(int value) {
         return leftArgument.evaluate(value) - rightArgument.evaluate(value);
     }
 }

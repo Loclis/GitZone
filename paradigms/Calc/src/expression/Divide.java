@@ -1,4 +1,4 @@
-package calc;
+package expression;
 
 public class Divide extends AbstractOperation {
     Divide(Expression leftArgument, Expression rightArgument) {
@@ -6,7 +6,7 @@ public class Divide extends AbstractOperation {
     }
 
     @Override
-    double calc(double value) {
+    int calc(int value) {
         return leftArgument.evaluate(value) / rightArgument.evaluate(value);
     }
 }

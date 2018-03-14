@@ -1,4 +1,4 @@
-package calc;
+package expression;
 
 public class Variable implements Expression {
     private String name;
@@ -8,7 +8,7 @@ public class Variable implements Expression {
     }
 
     @Override
-    public double evaluate(double value) {
+    public int evaluate(int value) {
         return value;
     }
 }

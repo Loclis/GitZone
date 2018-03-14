@@ -1,4 +1,4 @@
-package calc;
+package expression;
 
 public abstract class AbstractOperation implements Expression {
     Expression leftArgument, rightArgument;
@@ -8,10 +8,9 @@ public abstract class AbstractOperation implements Expression {
         this.rightArgument = rightArgument;
     }
 
-    @Override
-    public double evaluate(double value) {
+    public int evaluate(int value) {
         return calc(value);
     }
 
-    abstract double calc(double value);
+    abstract int calc(int value);
 }

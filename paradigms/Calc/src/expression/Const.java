@@ -1,14 +1,14 @@
-package calc;
+package expression;
 
 public class Const implements Expression {
-    private double value;
+    private int value;
 
-    Const(double value) {
+    Const(int value) {
         this.value = value;
     }
 
     @Override
-    public double evaluate(double value) {
+    public int evaluate(int value) {
         return this.value;
     }
 }

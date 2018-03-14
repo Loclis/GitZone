@@ -1,4 +1,4 @@
-package calc;
+package expression;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class Main {
             return;
         }
         try {
-            double value = Double.parseDouble(args[0]);
+            int value = Integer.parseInt(args[0]);
             System.out.println(new Add(
                             new Subtract(
                                     new Multiply(
