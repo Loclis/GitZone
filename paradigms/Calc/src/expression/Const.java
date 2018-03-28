@@ -1,14 +1,24 @@
 package expression;
 
-public class Const implements Expression {
-    private int value;
+public class Const implements MultiExpression {
+    private final Number value;
 
-    Const(int value) {
+    public Const(Number value) {
         this.value = value;
     }
 
     @Override
-    public int evaluate(int value) {
-        return this.value;
+    public double evaluate(double x) {
+        return value.doubleValue();
+    }
+
+    @Override
+    public int evaluate(int x) {
+        return value.intValue();
+    }
+
+    @Override
+    public int evaluate(int x, int y, int z) {
+        return value.intValue();
     }
 }

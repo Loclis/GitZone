@@ -3,6 +3,6 @@ package expression;
 /**
  * @author Georgiy Korneev (kgeorgiy@kgeorgiy.info)
  */
-public interface Expression{
-    int evaluate(int x);
+public strictfp interface DoubleExpression {
+    double evaluate(double x);
 }

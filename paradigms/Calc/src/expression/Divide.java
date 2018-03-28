@@ -1,13 +1,18 @@
 package expression;
 
-public class Divide extends AbstractOperation {
-    Divide(Expression leftArgument, Expression rightArgument) {
+public class Divide extends AbstractBinaryOperation {
+    public Divide(MultiExpression leftArgument, MultiExpression rightArgument) {
         super(leftArgument, rightArgument);
     }
 
     @Override
-    int calc(int value) {
-        return leftArgument.evaluate(value) / rightArgument.evaluate(value);
+    protected int apply(int leftValue, int rightValue) {
+        return leftValue / rightValue;
+    }
+
+    @Override
+    protected double apply(double leftValue, double rightValue) {
+        return leftValue / rightValue;
     }
 }
 

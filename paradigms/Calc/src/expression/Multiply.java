@@ -1,12 +1,17 @@
 package expression;
 
-public class Multiply extends AbstractOperation {
-    Multiply(Expression leftArgument, Expression rightArgument) {
+public class Multiply extends AbstractBinaryOperation {
+    public Multiply(MultiExpression leftArgument, MultiExpression rightArgument) {
         super(leftArgument, rightArgument);
     }
 
     @Override
-    int calc(int value) {
-        return leftArgument.evaluate(value) * rightArgument.evaluate(value);
+    protected int apply(int leftValue, int rightValue) {
+        return leftValue * rightValue;
+    }
+
+    @Override
+    protected double apply(double leftValue, double rightValue) {
+        return leftValue * rightValue;
     }
 }

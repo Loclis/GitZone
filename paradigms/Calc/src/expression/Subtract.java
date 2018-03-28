@@ -1,12 +1,17 @@
 package expression;
 
-public class Subtract extends AbstractOperation{
-    Subtract(Expression leftArgument, Expression rightArgument) {
+public class Subtract extends AbstractBinaryOperation {
+    public Subtract(MultiExpression leftArgument, MultiExpression rightArgument) {
         super(leftArgument, rightArgument);
     }
 
     @Override
-    int calc(int value) {
-        return leftArgument.evaluate(value) - rightArgument.evaluate(value);
+    protected int apply(int leftValue, int rightValue) {
+        return leftValue - rightValue;
+    }
+
+    @Override
+    protected double apply(double leftValue, double rightValue) {
+        return leftValue - rightValue;
     }
 }
