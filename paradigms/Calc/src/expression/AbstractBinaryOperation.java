@@ -2,7 +2,7 @@ package expression;
 
 import java.util.Objects;
 
-public strictfp abstract class AbstractBinaryOperation implements MultiExpression {
+public abstract class AbstractBinaryOperation implements MultiExpression {
     private final MultiExpression leftArgument, rightArgument;
 
     public AbstractBinaryOperation(MultiExpression leftArgument, MultiExpression rightArgument) {
