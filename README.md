@@ -1,2 +1,5 @@
-## GitZone
-working files only
+# ITMO courses' files
+
+* *Courses*
+    * [Paradigms](paradigms/)
+    
