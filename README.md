@@ -3,5 +3,5 @@
 * *Courses*
     * [Paradigms](paradigms/)
     * [Cpp-course](cpp-course/)
-    * [Discrete Math](discreteMath/)
+    * [Discrete Math](diskreteMath/)
     * [Algorithms and Data-Structures](algorithms/)
